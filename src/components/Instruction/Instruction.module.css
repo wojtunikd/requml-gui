@@ -1,0 +1,14 @@
+.Instruction {
+    padding: 2.5rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+@media(min-width: 768px) {
+    .Instruction {
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+}
