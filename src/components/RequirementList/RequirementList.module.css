@@ -1,0 +1,21 @@
+.RequirementList {
+    display: flex;
+    flex-direction: column;
+}
+
+.AddLineIcon {
+    align-self: center;
+    width: 2rem !important;
+    height: 2rem !important;
+    margin: 1rem;
+    cursor: pointer;
+    transition: 0.15s ease-in-out !important;
+}
+
+.AddLineIcon:hover {
+    transform: scale(1.1);
+}
+
+@media(min-width: 768px) {
+    
+}
