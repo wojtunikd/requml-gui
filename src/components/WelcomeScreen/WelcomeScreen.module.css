@@ -1,0 +1,102 @@
+.WelcomeScreen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 50vh;
+    background: linear-gradient(45deg, #fafafa, #f0ddc5, #c3ebfa, #c3fad6);
+    background-size: 400% 400%;
+    animation: shiftGradient 15s ease infinite;
+    border-bottom-right-radius: 2rem;
+    border-bottom-left-radius: 2rem;
+    padding: 1.5rem;
+}
+
+.WelcomeGraphic {
+    max-width: 90vw;
+}
+
+.WelcomeTextArea {
+    max-width: 90%;
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.WelcomeTextArea h1 {
+    font-family: "Playfair Display", serif;
+    font-weight: 600;
+}
+
+.WelcomeTextArea h2 {
+    font-family: "Playfair Display SC", serif;
+    font-weight: 600;
+    margin: 0;
+    font-size: 1rem;
+}
+
+.WelcomeTextArea p {
+    font-size: 0.85rem;
+}
+
+.CharacteristicLine {
+    font-weight: bold;
+    margin: 0.5rem;
+}
+
+.WelcomeTextArea img {
+    width: 4rem;
+}
+
+.GradientButton {
+    background-image: linear-gradient(90deg, #6CC1ED 0,#1D2749 51%,#24c6dc);
+    margin: 1rem 0 0 0;
+    padding: 0.75rem;
+    text-align: center;
+    transition: .5s;
+    background-size: 200% auto;
+    color: #fff;
+    box-shadow: 2px 2px 10px -5px #000;
+    border-radius: 10px;
+    display: block;
+    cursor: pointer;
+    border: none;
+    text-transform: uppercase;
+    font-size: 0.65rem;
+    align-self: center;
+}
+
+.GradientButton:hover { 
+    background-position: right center; 
+}
+
+@media(min-width: 768px) {
+    .WelcomeScreen {
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+
+    .WelcomeTextArea {
+        max-width: 40%;
+        padding: 1.5rem 2.5rem;
+    }
+
+    .WelcomeGraphic {
+        max-width: unset;
+        max-height: 45vh;
+    }
+}
+
+@keyframes shiftGradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
