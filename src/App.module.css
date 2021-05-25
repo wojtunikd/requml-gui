@@ -1,0 +1,10 @@
+body {
+    margin: 0;
+    background: #fafafa;
+    font-family: 'Questrial', sans-serif;
+    font-size: 0.9rem;
+}
+
+input {
+    background: #fafafa !important;
+}

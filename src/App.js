@@ -1,25 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import WelcomeScreen from "./components/WelcomeScreen/WelcomeScreen";
+import Instruction from "./components/Instruction/Instruction";
+import UserStoryInstruction from "./components/UserStoryInstruction/UserStoryInstruction";
+import RequirementArea from "./components/RequirementArea/RequirementArea";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import styles from "./App.module.css";
+
+const App = () => {
+    return (
+        <div className={styles.App}>
+            <WelcomeScreen />
+            <Instruction />
+            <UserStoryInstruction />
+            <RequirementArea />
+        </div>
+    );
 }
 
 export default App;
