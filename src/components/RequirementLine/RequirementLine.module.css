@@ -1,0 +1,42 @@
+.RequirementLine {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: 0.5rem 0;
+    width: 90vw;
+}
+
+.RequirementLine span {
+    font-family: 'Playfair Display';
+    font-weight: bold;
+    font-size: 1.25rem;
+}
+
+.RequirementLine .RoleText {
+    margin: 0.5rem;
+}
+
+.RequirementLine .ActionText {
+    margin: 0 0.5rem 0 0.1rem;
+}
+
+.RequirementAction {
+    width: 50%;
+}
+
+.BinIcon {
+    cursor: pointer;
+    width: 2rem !important;
+    height: 2rem !important;
+    margin: 0 0.5rem;
+    transition: 0.15s ease-in-out !important;
+}
+
+.BinIcon:hover {
+    transform: scale(1.1);
+}
+
+@media(min-width: 768px) {
+    
+}
