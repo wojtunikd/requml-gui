@@ -26,6 +26,7 @@ const RequirementLine = (props) => {
 				size="small"
 				value={props.action}
 				onChange={(event) => props.updateItem(event, props.index)}
+                style={props.index === 0 ? { marginRight: "3rem" } : {} }
 			/>
 			{props.canBeDeleted && (
 				<DeleteIcon

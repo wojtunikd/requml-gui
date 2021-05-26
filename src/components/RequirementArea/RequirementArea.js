@@ -2,18 +2,20 @@ import React, { useState, createRef } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
 import styles from "./RequirementArea.module.css";
 
-import { TextField } from "@material-ui/core";
+import { TextField, CircularProgress } from "@material-ui/core";
 
 import RequirementList from "../RequirementList/RequirementList";
+import axios from "axios";
 
 const RequirementArea = () => {
     const recaptchaRef = createRef();
 
 	const [email, setEmail] = useState("");
 	const [userStories, setUserStories] = useState([]);
+    const [spinnerVisible, setSpinnerVisible] = useState(false);
 
     const submitRequest = async () => {
-        
+
         if(email.length === 0) {
             return alert("Please provide your e-mail address so that we can send you the UML diagrams");
         }
@@ -30,9 +32,24 @@ const RequirementArea = () => {
             return alert("Please pass the reCAPTCHA verification to continue with the request");
         }
 
-        const data = JSON.stringify({ email: email, stories: JSON.stringify(userStories) });
+        setSpinnerVisible(true);
 
-        console.log(data);
+        const data = { email: email, stories: JSON.stringify(userStories), token: token };
+
+        axios
+            .post("http://localhost:3333/api/stories", {...data})
+            .then(res => {
+                if(res.status === 200) {
+                    setSpinnerVisible(false);
+                    return alert("Success!");
+                }
+            })
+            .catch(error => {
+                setSpinnerVisible(false);
+                if(error.response) {
+                    return alert(error.response.data);
+                }
+            })
     }
 
 	return (
@@ -55,12 +72,23 @@ const RequirementArea = () => {
                 ref={recaptchaRef}
                 sitekey="6LcPGO8aAAAAAKLKqVSJcUkyWLrmd8aegKdOVJmJ"
             />
-			<button
-				className={styles.GradientButton}
-				onClick={submitRequest}
-			>
-				Submit
-			</button>
+            <div className={styles.SubmitArea}>
+                <button
+                    className={styles.GradientButton}
+                    onClick={submitRequest}
+                >
+                    Submit
+                </button>
+                { spinnerVisible &&
+                <CircularProgress
+                    size={22}
+                    thickness={8}
+                    value={100}
+                    style={{ color: "#1D2749", margin: "0 1rem", transition: "0.2s ease-in-out" }}
+                />
+                }
+            </div>
+			
 		</div>
 	);
 };

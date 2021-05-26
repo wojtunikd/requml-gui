@@ -7,7 +7,7 @@
     align-self: center;
     width: 2rem !important;
     height: 2rem !important;
-    margin: 1rem;
+    margin: 1rem 0 1.5rem 0;
     cursor: pointer;
     transition: 0.15s ease-in-out !important;
 }
