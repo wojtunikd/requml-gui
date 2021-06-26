@@ -17,19 +17,19 @@ const RequirementArea = () => {
     const submitRequest = async () => {
 
         if(email.length === 0) {
-            return alert("Please provide your e-mail address so that we can send you the UML diagrams");
+            return alert("Please provide your e-mail address so that we can send you the UML diagrams.");
         }
 
-        if(userStories.length === 0) return alert("Please enter at least one user story");
+        if(userStories.length === 0) return alert("Please enter at least one user story.");
 
         for(const story of userStories) {
-            if(story.role.length === 0 || story.action.length === 0) return alert("For each user story, please fill in the role and the action.");
+            if(story.role.length === 0 || story.action.length === 0 || story.verb.length === 0) return alert("For each user story, please fill in the role and the action.");
         }
 
         const token = await recaptchaRef.current.getValue();
 
         if(!token) {
-            return alert("Please pass the reCAPTCHA verification to continue with the request");
+            return alert("Please pass the reCAPTCHA verification to continue with the request.");
         }
 
         setSpinnerVisible(true);

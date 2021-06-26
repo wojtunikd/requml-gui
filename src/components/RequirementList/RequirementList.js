@@ -5,11 +5,11 @@ import AddCircleIcon from '@material-ui/icons/AddCircleRounded';
 import RequirementLine from "../RequirementLine/RequirementLine";
 
 const RequirementList = props => {
-    const [inputList, setInputList] = useState([{ role: "", action: "" }]);
+    const [inputList, setInputList] = useState([{ role: "", verb: "want to", action: "" }]);
 
     const appendLine = () => {
         if(inputList.length === 50) return alert("You have reached the limit of 50 user stories");
-        const newInputList = [...inputList, { role: "", action: "" }];
+        const newInputList = [...inputList, { role: "", verb: "want to", action: "" }];
         setInputList(newInputList);
         props.updateUserStories(newInputList);
     }
@@ -34,6 +34,7 @@ const RequirementList = props => {
             {
                 inputList.map((item, i) => <RequirementLine 
                     role={item.role} 
+                    verb={item.verb}
                     action={item.action} 
                     canBeDeleted={!!(inputList.length > 1 && i !== 0)} 
                     index={i}

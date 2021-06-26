@@ -1,8 +1,6 @@
 .RequirementLine {
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
+    flex-direction: column;
     margin: 0.5rem 0;
     width: 90vw;
 }
@@ -14,22 +12,14 @@
 }
 
 .RequirementLine .RoleText {
-    margin: 0.5rem;
-}
-
-.RequirementLine .ActionText {
-    margin: 0 0.5rem 0 0.1rem;
-}
-
-.RequirementAction {
-    width: 50%;
+    margin: 0.5rem 0.5rem 0.75rem 0.5rem;
 }
 
 .BinIcon {
     cursor: pointer;
     width: 2rem !important;
     height: 2rem !important;
-    margin: 0 0.5rem;
+    margin: 0;
     transition: 0.15s ease-in-out !important;
 }
 
@@ -37,6 +27,38 @@
     transform: scale(1.1);
 }
 
+.RequirementLine > div {
+    margin: 0.5rem 0;
+}
+
+.RequirementRole {
+    margin-top: 0 !important;
+}
+
 @media(min-width: 768px) {
-    
+    .RequirementVerb {
+        margin: 0 0.25rem;
+    }
+
+    .RequirementLine {
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .RequirementAction {
+        width: 50%;
+    }
+
+    .RequirementLine .RoleText {
+        margin: 0.5rem;
+    }
+
+    .BinIcon {
+        margin: 0 0.5rem;
+    }
+
+    .RequirementLine > div {
+        margin: 0;
+    }
 }
