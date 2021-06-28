@@ -1,14 +1,13 @@
+:root {
+    --welcomeFont: 'Caviar Dreams', sans-serif;
+}
+
 .WelcomeScreen {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     min-height: 50vh;
-    background: linear-gradient(45deg, #fafafa, #f0ddc5, #c3ebfa, #c3fad6);
-    background-size: 400% 400%;
-    animation: shiftGradient 15s ease infinite;
-    border-bottom-right-radius: 2rem;
-    border-bottom-left-radius: 2rem;
     padding: 1.5rem;
 }
 
@@ -26,19 +25,21 @@
 }
 
 .WelcomeTextArea h1 {
-    font-family: "Playfair Display", serif;
+    font-family: var(--welcomeFont);
+    font-size: 2.25rem;
+    text-transform: uppercase;
     font-weight: 600;
 }
 
 .WelcomeTextArea h2 {
-    font-family: "Playfair Display SC", serif;
+    font-family: var(--welcomeFont);
     font-weight: 600;
     margin: 0;
-    font-size: 1rem;
+    font-size: 1.15rem;
 }
 
 .WelcomeTextArea p {
-    font-size: 0.85rem;
+    font-size: 1rem;
 }
 
 .CharacteristicLine {
@@ -50,10 +51,20 @@
     width: 4rem;
 }
 
+.lgBlob {
+    width: 35vw;
+    z-index: -1;
+    cursor: pointer;
+}
+
+.lgBlob path {
+    animation: blob 2s infinite;
+}
+
 .GradientButton {
     background-image: linear-gradient(90deg, #6CC1ED 0,#1D2749 51%,#24c6dc);
     margin: 1rem 0 0 0;
-    padding: 0.75rem;
+    padding: 0.85rem 1.15rem;
     text-align: center;
     transition: .5s;
     background-size: 200% auto;
@@ -64,7 +75,7 @@
     cursor: pointer;
     border: none;
     text-transform: uppercase;
-    font-size: 0.65rem;
+    font-size: 0.8rem;
     align-self: center;
 }
 
@@ -89,14 +100,20 @@
     }
 }
 
-@keyframes shiftGradient {
-    0% {
-        background-position: 0% 50%;
+@keyframes blob {
+    25% {
+        d: path(
+            "M397.5,281Q395,322,359.5,341.5Q324,361,293,393Q262,425,215,428Q168,431,120.5,409.5Q73,388,45,341.5Q17,295,50,248Q83,201,76,144.5Q69,88,114,57.5Q159,27,210,46.5Q261,66,302,78.5Q343,91,363.5,127.5Q384,164,392,202Q400,240,397.5,281Z"
+        );
     }
     50% {
-        background-position: 100% 50%;
+        d: path(
+            "M389.5,297Q418,354,365,376Q312,398,260.5,427Q209,456,155.5,427.5Q102,399,65,350.5Q28,302,51.5,246.5Q75,191,95,143.5Q115,96,162.5,64Q210,32,247.5,86Q285,140,336,142.5Q387,145,374,192.5Q361,240,389.5,297Z"
+        );
     }
-    100% {
-        background-position: 0% 50%;
+    75% {
+        d: path(
+            "M397.5,281Q395,322,359.5,341.5Q324,361,293,393Q262,425,215,428Q168,431,120.5,409.5Q73,388,45,341.5Q17,295,50,248Q83,201,76,144.5Q69,88,114,57.5Q159,27,210,46.5Q261,66,302,78.5Q343,91,363.5,127.5Q384,164,392,202Q400,240,397.5,281Z"
+        );
     }
 }

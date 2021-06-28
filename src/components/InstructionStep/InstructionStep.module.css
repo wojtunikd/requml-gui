@@ -1,3 +1,7 @@
+:root {
+    --welcomeFont: 'Caviar Dreams', sans-serif;
+}
+
 .InstructionStep {
     padding: 1.25rem;
     display: flex;
@@ -17,7 +21,8 @@
 }
 
 .InstructionStep h2 {
-    font-family: "Playfair Display SC", serif;
+    font-family: var(--welcomeFont);
+    text-transform: uppercase;
     font-weight: bold;
     font-size: 1.05rem;
     margin: 0 0 0.5rem 0;
