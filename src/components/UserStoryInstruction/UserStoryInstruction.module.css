@@ -18,6 +18,11 @@
         justify-content: space-evenly;
     }
 
+    .UserStoryDescription {
+        max-width: 40%;
+        padding: 1rem;
+    }
+
     .UserStoryInstruction .UserStoryGraphic {
         width: auto;
         max-height: 40vh;
