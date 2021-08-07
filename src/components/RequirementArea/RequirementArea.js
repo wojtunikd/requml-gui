@@ -37,11 +37,11 @@ const RequirementArea = () => {
         const data = { email: email, stories: JSON.stringify(userStories), token: token };
 
         axios
-            .post("https://node.requml.co.uk/api/stories", {...data})
+            .post("http://node.requml.co.uk/api/stories", {...data})
             .then(res => {
                 if(res.status === 200) {
                     setSpinnerVisible(false);
-                    return alert("Success!");
+                    return alert("Your user stories have been submitted! Once analysed, you will receive an email with further instructions.");
                 }
             })
             .catch(error => {
