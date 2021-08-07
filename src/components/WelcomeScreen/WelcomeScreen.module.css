@@ -7,7 +7,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-height: 50vh;
+    min-height: 60vh;
     padding: 1.5rem;
 }
 
@@ -52,9 +52,8 @@
 }
 
 .blobContainer {
-    width: 35vw;
-    z-index: -1;
-    cursor: none;
+    width: 90%;
+    margin: 1.5rem auto;
 }
 
 .GradientButton {
@@ -83,6 +82,7 @@
     .WelcomeScreen {
         flex-direction: row;
         justify-content: space-evenly;
+        padding: 2rem 0;
     }
 
     .WelcomeTextArea {
@@ -93,5 +93,20 @@
     .WelcomeGraphic {
         max-width: unset;
         max-height: 45vh;
+    }
+
+    .blobContainer {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        width: 35vw;
+        z-index: -1;
+        cursor: none;
+        margin: 0;
+    }
+
+    .blobContainer svg {
+        width: 85%;
     }
 }
