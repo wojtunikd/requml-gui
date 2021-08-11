@@ -13,6 +13,7 @@ const RequirementArea = () => {
 	const [email, setEmail] = useState("");
 	const [userStories, setUserStories] = useState([]);
     const [spinnerVisible, setSpinnerVisible] = useState(false);
+    const [isDisabled, setIsDisabled] = useState(false);
 
     const submitRequest = async () => {
 
@@ -37,10 +38,11 @@ const RequirementArea = () => {
         const data = { email: email, stories: JSON.stringify(userStories), token: token };
 
         axios
-            .post("https://requml-node.herokuapp.com/api/stories", {...data})
+            .post("http://localhost:3333/api/stories", {...data})
             .then(res => {
                 if(res.status === 200) {
                     setSpinnerVisible(false);
+                    setIsDisabled(true);
                     return alert("Your user stories have been submitted! Once analysed, you will receive an email with further instructions.");
                 }
             })
@@ -74,7 +76,8 @@ const RequirementArea = () => {
             />
             <div className={styles.SubmitArea}>
                 <button
-                    className={styles.GradientButton}
+                    disabled={isDisabled}
+                    className={isDisabled ? styles.GradientButtonDisabled : styles.GradientButton}
                     onClick={submitRequest}
                 >
                     Submit
