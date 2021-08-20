@@ -38,7 +38,7 @@ const RequirementArea = () => {
         const data = { email: email, stories: JSON.stringify(userStories), token: token };
 
         axios
-            .post("http://localhost:3333/api/stories", {...data})
+            .post("https://requml-node.herokuapp.com/api/stories", {...data})
             .then(res => {
                 if(res.status === 200) {
                     setSpinnerVisible(false);
