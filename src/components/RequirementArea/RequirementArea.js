@@ -91,7 +91,6 @@ const RequirementArea = () => {
                 />
                 }
             </div>
-			
 		</div>
 	);
 };

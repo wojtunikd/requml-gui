@@ -27,8 +27,8 @@ const RequirementLine = (props) => {
                     onChange={(event) => props.updateItem(event, props.index)}
                     label="Verb"
                     inputProps={{
-                        name: 'verb',
-                        id: 'outlined-age-native-simple',
+                        name: "verb",
+                        id: "outlined-age-native-simple",
                     }}
                 >
                     <option value="want to">I want to</option>
