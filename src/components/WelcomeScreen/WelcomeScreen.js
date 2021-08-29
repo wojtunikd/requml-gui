@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./WelcomeScreen.module.css";
 
+// Royalty free graphics from https://2.flexiple.com/scale/all-illustrations
 import { ReactComponent as CollaborationGraphic } from "./new-collaboration.svg";
 
 import LogoImage from "./logo.png";
