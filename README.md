@@ -54,7 +54,7 @@ Folder *src* contains all the folders with files that define the React component
  1. .firebaserc: config file of Firebase (deployment)
  2. firebase.json: config file of Firebase (deployment)
  3. .gitignore: contains a list of folders and files that should not be pushed to the Git repository
- 4. Avowal.txt: the statement cerifying that the project is my own work
+ 4. Avowal.txt: the statement certifying that the project is my own work
  5. package-log.json: Node.js config file
  6. package.json: Node.js config file
  7. README: the current file
