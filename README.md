@@ -15,7 +15,7 @@ To run the application after installing the packages, run the following command:
 > npm start
   
 
-# Route Endpoints
+# Routes
 
 > GET /
 
@@ -64,4 +64,3 @@ Folder *src* contains all the folders with files that define the React component
  The website is deployed on Firebase and can be accessed via URL:
  > https://requml.co.uk
 
- 
